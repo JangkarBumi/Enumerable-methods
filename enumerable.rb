@@ -28,4 +28,3 @@ module Enumerable
     print all
   end
 end
-
