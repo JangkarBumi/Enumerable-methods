@@ -18,6 +18,3 @@ module Enumerable
     self
   end
 end
-
-[1, 2, 2, 2, 3, 4, 6].my_each { |var| print var * 2 }
-[1, 2, 2, 2, 3, 4, 6].my_each_with_index { |var, index| print "#{index}:#{var} " }
