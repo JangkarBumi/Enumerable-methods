@@ -29,4 +29,3 @@ module Enumerable
   end
 end
 
-%w[ant bear cat].my_all? { |word| word.length >= 2 }
