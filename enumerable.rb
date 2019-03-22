@@ -1,4 +1,4 @@
-# This is our clone of the each method
+# Custom Enumerable Method
 module Enumerable
   def my_each
     i = 0 if block_given?
@@ -23,7 +23,7 @@ module Enumerable
     my_each do |x|
       selected << x if yield(x)
     end
-    puts selected
+    selected
   end
 
   def my_all?
@@ -33,7 +33,7 @@ module Enumerable
       all = false unless yield(self[i])
       i += 1
     end
-    print all
+    all
   end
 
   def my_any?
@@ -43,7 +43,7 @@ module Enumerable
       all = true if yield(self[i])
       i += 1
     end
-    print all
+    all
   end
 
   def my_none?
