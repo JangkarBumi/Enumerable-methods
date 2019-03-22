@@ -1,14 +1,13 @@
 # This is our clone of the each method
 module Enumerable
-    def each_clone
-      i = 0 if block_given?
-      begin
-        yield(self[i])
-        i += 1
-      end while i < length
-      self
+  def my_each
+    i = 0 if block_given?
+    while i < length
+      yield(self[i])
+      i += 1
     end
-    end
-  
-  [1, 2, 2, 2, 3, 4, 6].each_clone { |var| print "#{var} " }
-  
+    self
+  end
+end
+
+[1, 2, 2, 2, 3, 4, 6].my_each { |var| print var * 2 }
