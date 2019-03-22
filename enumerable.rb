@@ -46,5 +46,3 @@ module Enumerable
     print all
   end
 end
- 
-%w{a bjffj c}.my_any? {|word| word.length >= 3}
