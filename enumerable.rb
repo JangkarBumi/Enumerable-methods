@@ -35,4 +35,16 @@ module Enumerable
     end
     print all
   end
+
+  def my_any?
+    all = false
+    i = 0
+    while i < length
+      all = true if yield(self[i])
+      i += 1
+    end
+    print all
+  end
 end
+ 
+%w{a bjffj c}.my_any? {|word| word.length >= 3}
