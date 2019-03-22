@@ -45,4 +45,15 @@ module Enumerable
     end
     print all
   end
+
+  def my_none?
+    if block_given?
+      my_each do |x|
+        return false if yield(x) == true
+      end
+      true
+    else
+      false
+    end
+  end
 end
