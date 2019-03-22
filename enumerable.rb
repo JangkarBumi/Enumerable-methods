@@ -17,4 +17,13 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    selected = [] if block_given?
+    my_each do |x|
+      selected << x if yield(x)
+    end
+    puts selected
+  end
 end
+[4, 'fart', 2, 'numba'].my_select { |var| var != 'fart' }
