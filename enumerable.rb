@@ -59,10 +59,10 @@ module Enumerable
 
   def my_count(arg = nil)
     count = 0
-    my_each do |x|
+    my_each do |i|
       if arg
-        count += 1 if arg == x
-      elsif yield(x) == true
+        count += 1 if arg == i
+      elsif yield(i) == true
         count += 1
       end
     end
