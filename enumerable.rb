@@ -26,4 +26,3 @@ module Enumerable
     puts selected
   end
 end
-[4, 'fart', 2, 'numba'].my_select { |var| var != 'fart' }
