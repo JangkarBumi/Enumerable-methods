@@ -18,11 +18,15 @@ module Enumerable
     self
   end
 
-  def my_select
-    selected = [] if block_given?
-    my_each do |x|
-      selected << x if yield(x)
+  def my_all?
+    all = true
+    i = 0
+    while i < length
+      all = false unless yield(self[i])
+      i += 1
     end
-    puts selected
+    print all
   end
 end
+
+%w[ant bear cat].my_all? { |word| word.length >= 2 }
