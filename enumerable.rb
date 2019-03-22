@@ -56,4 +56,16 @@ module Enumerable
       false
     end
   end
+
+  def my_count(arg = nil)
+    count = 0
+    my_each do |x|
+      if arg
+        count += 1 if arg == x
+      elsif yield(x) == true
+        count += 1
+      end
+    end
+    count
+  end
 end
