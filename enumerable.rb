@@ -18,6 +18,14 @@ module Enumerable
     self
   end
 
+  def my_select
+    selected = [] if block_given?
+    my_each do |x|
+      selected << x if yield(x)
+    end
+    puts selected
+  end
+
   def my_all?
     all = true
     i = 0
@@ -28,4 +36,3 @@ module Enumerable
     print all
   end
 end
-
