@@ -58,6 +58,8 @@ module Enumerable
   end
 
   def my_count(arg = nil)
+    return length if !block_given? && arg.nil?
+
     count = 0
     my_each do |i|
       if arg
